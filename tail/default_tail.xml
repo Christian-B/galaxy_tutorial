@@ -1,5 +1,5 @@
-<tool id="simple_tail" name="Tail" version="0.1">
-    <description>Extracts last few lines from a text file</description>
+<tool id="default_tail" name="Default Tail" version="0.1">
+    <description>Extracts last 10 lines from a text file</description>
     <command>
         tail $input_file > $output_file
     </command>
@@ -13,11 +13,11 @@
     <tests>
         <test>
             <param name="input_file" value="30_lines.text" />
-            <output name="output_file" file="simple_tail.txt" />
+            <output name="output_file" file="default_tail.txt" />
         </test>
     </tests>
     <help>
-        Preforms tail on a text file.
+        Preforms tail on a text file using the default 10 lines.
     </help>
     <citations/>
 </tool>
