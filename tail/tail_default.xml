@@ -1,4 +1,4 @@
-<tool id="default_tail" name="Default Tail" version="0.1">
+<tool id="tail_default" name="Default Tail" version="0.1">
     <description>Extracts last 10 lines from a text file</description>
     <command>
         tail $input_file > $output_file
