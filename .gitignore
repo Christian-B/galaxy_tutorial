@@ -1,0 +1,22 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# gedit backups
+*~
+
+#Manual backups
+*.bak
+
+#Local old_stuff not worth sending to github
+old_stuff/
+
+# Planemo output
+tool_test_output.html
+tool_test_output.json
+
+#Personalized commands
+commands.txt
+
+#tar files as these used to load to toolshed
+*.tar
