@@ -1,6 +1,6 @@
 <tool id="tail_python_detect_errors" name="Python based tail (detect_errors)" version="0.1">
     <description>Extracts a few lines from a text file</description>
-    <command interpreter="python" detect_errors="aggressive">
+    <command interpreter="python" detect_errors="exit_code">
         tail_verbose.py
         #if $count.count_select=="from_top":
             --from_top
