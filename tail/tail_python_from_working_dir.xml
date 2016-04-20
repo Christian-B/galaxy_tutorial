@@ -1,0 +1,32 @@
+<tool id="tail_python_find_files" name="Python based tail (find file)" version="0.1">
+    <description>Extracts a few lines from a text file</description>
+    <command interpreter="python" detect_errors="exit_code">
+        tail_to_fixed_location.py
+        --input $input_file 
+    </command>
+    <inputs>
+        <param name="input_file" type="data" format="txt" label="Full file"/>
+    </inputs>
+    <outputs>
+        <data format="txt" type="data" name="output_file" label="Tail file"  from_work_dir="tail.txt" />
+    </outputs>
+    <tests>
+        <test>
+            <param name="input_file" value="30_lines.text" />
+            <output name="output_file" file="default_tail.txt" />
+        </test>
+    </tests>
+    <help>
+        Preforms tail on a text file using a pythn script.
+    </help>
+    <citations>
+        <citation type="bibtex">
+            @misc{
+                Galaxy_tutorial
+                author = {Christian Y. A. Brenninkmeijer}
+                title = {Githb repositoiry of my Galaxy Tutorials},
+                url = {https://github.com/Christian-B/galaxy_tutorial}
+            }
+        </citation>
+    </citations>
+</tool>
