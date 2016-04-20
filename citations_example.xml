@@ -1,0 +1,22 @@
+<tool id="citations_example" name="Citations" version="0.1">
+    <description>Does nothing except show citations</description>
+    <citations>
+        <citation type="doi">DOI:10.1002/0471250953.bi1005s38</citation>
+        <citation type="bibtex"><![CDATA[@book{leblanc2005linux,
+            title={Linux for dummies},
+            author={LeBlanc, Dee-Ann},
+            year={2005},
+            publisher={John Wiley \& Sons}
+            }
+        ]]>
+        </citation>
+        <citation type="bibtex">
+            @misc{
+                Galaxy_tutorial
+                author = {Christian Y. A. Brenninkmeijer}
+                title = {Githb repositoiry of my Galaxy Tutorials},
+                url = {https://github.com/Christian-B/galaxy_tutorial}
+            }
+        </citation>
+    </citations>
+</tool>

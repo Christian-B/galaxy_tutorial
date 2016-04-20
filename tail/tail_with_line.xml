@@ -25,5 +25,14 @@
     <help>
         Preforms tail on a text file allowing the user to set the line value.
     </help>
-    <citations/>
+    <citations>
+        <citation type="bibtex">
+            @misc{
+                Galaxy_tutorial
+                author = {Christian Y. A. Brenninkmeijer}
+                title = {Githb repositoiry of my Galaxy Tutorials},
+                url = {https://github.com/Christian-B/galaxy_tutorial}
+            }
+        </citation>
+    </citations>
 </tool>
