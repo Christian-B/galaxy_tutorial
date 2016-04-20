@@ -1,7 +1,7 @@
 <tool id="tail_python_ba" name="Python based tail (Bad)" version="0.1">
-    <description>Appears to fail due to error output</descdription>
+    <description>Appears to fail due to error output</description>
     <command interpreter="python">
-        tail_silent.py
+        tail_verbose.py
         #if $count.count_select=="from_top":
             --from_top
         #end if
