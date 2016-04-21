@@ -1,0 +1,39 @@
+<tool id="split_file_by_10s" name="Split file into files of 10 lines" version="0.1">
+    <description>Creates 1 file for each to lines of text</description>
+    <command interpreter="python">
+        split_file_by_10s.py --input $input_file >> $ten_files
+    </command>
+    <inputs>
+        <param name="input_file" type="data" format="txt" label="Full file"/>
+    </inputs>
+    <outputs>
+        <data format="txt" name="ten_files">
+            <discover_datasets pattern="(?P&lt;designation&gt;.+)\.txt" ext="txt" directory="split" visible="true" />
+        </data>
+    </outputs>    
+    <tests>
+        <test>
+            <param name="input_file" value="30_lines.text" />
+            <output name="ten_files">
+                <assert_contents>
+                    <has_line line="Ten file saved as split/lines0.txt" />
+                </assert_contents>
+                <discovered_dataset designation="lines0" ftype="txt" file="first10.txt"/>
+                <discovered_dataset designation="lines2" ftype="txt" file="third10.txt"/>
+            </output>
+        </test>
+    </tests>
+    <help>
+        Splits a txt file into one or more files each with (up to) ten lines in them.
+    </help>
+    <citations>
+        <citation type="bibtex">
+            @misc{
+                Galaxy_tutorial
+                author = {Christian Y. A. Brenninkmeijer}
+                title = {Githb repositoiry of my Galaxy Tutorials},
+                url = {https://github.com/Christian-B/galaxy_tutorial}
+            }
+        </citation>
+    </citations>
+</tool>
