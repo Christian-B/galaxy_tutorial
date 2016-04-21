@@ -14,5 +14,5 @@ if __name__ == '__main__':
         with open("split/lines"+str(ten)+".txt", 'w') as f:
             for line in use_lines:
                 f.write(line)
-        sys.stdout.write("Ten file saved as output/lines"+str(ten)+".txt\n")
+        sys.stdout.write("Ten file saved as split/lines"+str(ten)+".txt\n")
 
