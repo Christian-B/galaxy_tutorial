@@ -1,4 +1,4 @@
-<tool id="tagdust_basic_using_global" name="Tagdust basic depending on global install" version="0.1">
+<tool id="tagdust_basic_hardcoded" name="Tagdust basic hardcoded path" version="0.1">
     <description>A simple tagdust example</description>
     <command detect_errors="aggressive"><![CDATA[
         cp $fastq_input_file input.fastq && 
@@ -25,7 +25,7 @@
         </test>
     </tests>
     <help>
-        Splits a txt file into one or more files each with (up to) ten lines in them.
+        Runs tagdust from a hard coded location
     </help>
     <citations>
         <citation type="bibtex">
