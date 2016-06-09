@@ -1,0 +1,48 @@
+<tool id="tagdust_basic" name="Tagdust basic" version="0.1">
+    <description>A simple tagdust example</description>
+    <requirements>
+        <requirement type="package" version="2.31">tagdust</requirement>
+    </requirements>
+    <command detect_errors="aggressive"><![CDATA[
+        cp $fastq_input_file input.fastq && 
+        tagdust -o output -arch $architecture.fields.path input.fastq
+    ]]></command>
+    <inputs>
+        <param name="fastq_input_file" type="data" format="fastqsanger" label="Full file"/>
+        <param name="architecture" type="select" label="Using architecture">
+            <options from_data_table="tagdust_architecture"/>
+            <validator type="no_options" message="No architecture found"/>
+        </param>    
+    </inputs>
+    <outputs>
+        <data format="txt" name="logfile" label="Tagdust log on ${on_string} ." from_work_dir="output_logfile.txt"/>
+        <data format_source="fastq_input_file" name="extracted" label="Tagdust extracted reads from ${on_string}." from_work_dir="output.fq"/>
+        <data format_source="fastq_input_file" name="unextracted" label="Tagdust un-extracted reads from ${on_string}." from_work_dir="output_un.fq"/>
+     </outputs>
+    <tests>
+        <test>
+            <param name="fastq_input_file" value="read1.fastq" ftype="fastqsanger" /> 
+            <param name="architecture" value="Value_F:NNNNNNNN_S:TATAGGG_R:N" /> 
+            <output name="logfile" >
+                <assert_contents>
+                    <has_text text="Determining threshold for read0." />
+                 </assert_contents>
+            </output>
+            <output name="extracted" file="read1.fq"  ftype="fastqsanger" compare="sim_size" delta="1000"/>
+            <output name="unextracted" file="read1_un.fq"  ftype="fastqsanger" compare="sim_size" delta="1000"/>
+        </test>
+    </tests>
+    <help>
+        Runs tagdust from a hard coded location
+    </help>
+    <citations>
+        <citation type="bibtex">
+            @misc{
+                Galaxy_tutorial
+                author = {Christian Y. A. Brenninkmeijer}
+                title = {Githb repositoiry of my Galaxy Tutorials},
+                url = {https://github.com/Christian-B/galaxy_tutorial}
+            }
+        </citation>
+    </citations>
+</tool>

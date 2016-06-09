@@ -1,0 +1,6 @@
+<tables>
+    <table name="tagdust_architecture">
+        <columns>value, dbkey, name, barcode, path</columns>
+        <file path="**local_path**/tool-data/tagdust_architecture.loc" />
+    </table>
+ </tables>
